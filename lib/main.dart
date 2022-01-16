@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
-
+  final _controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,18 +42,18 @@ class HomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 30.0),
+                  padding: const EdgeInsets.only(top: 20.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     //mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         'PIG WEIGHT',
-                        style: TextStyle(fontSize: 45.0, color: Colors.pink),
+                        style: TextStyle(fontSize: 50.0, color: Colors.pink),
                       ),
                       Text(
                         'CALCULATOR',
-                        style: TextStyle(fontSize: 45.0, color: Colors.pink),
+                        style: TextStyle(fontSize: 50.0, color: Colors.pink),
                       ),
                       Image.asset(
                         'assets/images/pig.png',
@@ -67,31 +67,41 @@ class HomePage extends StatelessWidget {
             ),
           ),
           Padding(
-              padding: const EdgeInsets.only(
-                bottom: 0,
-                right: 1500,
-                left: 100,
-                top: 100,
+            padding: const EdgeInsets.only(
+              top: 10,
+            ),
+            child: Text('LENGTH(cm)'),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(
+              left: 800,
+              right: 800,
+              bottom: 50,
+            ),
+            child: TextField(
+              textAlign: TextAlign.center,
+              decoration: InputDecoration(
+                filled: true,
+                fillColor: Colors.white.withOpacity(0),
+                border: UnderlineInputBorder(),
               ),
-              child: TextField(
-                textAlign: TextAlign.center,
-                //controller: _controller,
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Colors.white.withOpacity(0),
-                  border: UnderlineInputBorder(),
-                ),
-              )),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(
+              top: 10,
+            ),
+            child: Text('GIRTH(cm)'),
+          ),
           Padding(
               padding: const EdgeInsets.only(
-                top: 0,
                 bottom: 50,
-                right: 100,
-                left: 1500,
+                left: 800,
+                right: 800,
               ),
               child: TextField(
                 textAlign: TextAlign.center,
-                //controller: _controller,
+                controller: _controller,
                 decoration: InputDecoration(
                   filled: true,
                   fillColor: Colors.white.withOpacity(0),
